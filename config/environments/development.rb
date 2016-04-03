@@ -38,4 +38,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  proxy = {
+      host: '127.0.0.1',
+      port: 8123
+  }
+  config.twitter = Hash.new
+  config.twitter[:consumer_key] = "56RQVuss2awvlojRVtJSKZi9d"
+  config.twitter[:consumer_secret] = "gPmG6LWp2V5AFF0KFYcZKIlsU9YKmVDdKVl6P4chF5DkcYFAJq"
+  config.twitter[:access_token] = "140890886-ihPVjuQ15zEZpDuuf6bBARwIuvJNxU9GlwPj0Aq2"
+  config.twitter[:access_token_secret] = "xiekxrD1dFyCfceN0nQzo4u6SQ6zyk8s6m2t8S1tqW8EE"
+  config.twitter[:proxy] = proxy
+
 end
