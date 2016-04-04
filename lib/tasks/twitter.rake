@@ -41,7 +41,12 @@ namespace :twitter do
 
   task watch: :environment do
     @streamingClient.user do |object|
-      puts object.text if object.is_a?(Twitter::Tweet)
+      if object.is_a?(Twitter::Tweet)
+        if object.text.include? '心'
+          t = Tweet.new({tweet_id: object.id, text: object.text, created_at: object.created_at})
+          t.save
+        end
+      end
     end
   end
 
